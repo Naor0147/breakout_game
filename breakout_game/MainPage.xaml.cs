@@ -27,9 +27,11 @@ namespace breakout_game
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Setting_page));
         }
+
+       
     }
 }

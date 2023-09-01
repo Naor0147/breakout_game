@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="BlueViolet">
-        <Button Content="Login" FontSize="80px" VerticalAlignment="Top" HorizontalAlignment="Center" Height="151" Width="369"  Click="Button_Click"/>
+        <Button Content="Login" FontSize="80px" VerticalAlignment="Top" HorizontalAlignment="Center" Height="151" Width="369"  Click="Login_Click"/>
 
         <Button Content="Settings" FontSize="80px" VerticalAlignment="Center" HorizontalAlignment="Center" Height="151" Width="369"  Click="Button_Click"/>
         <Button Content="Start" FontSize="80px"  Height="151" Width="369" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
