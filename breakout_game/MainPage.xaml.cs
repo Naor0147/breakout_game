@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,7 +26,10 @@ namespace breakout_game
         public MainPage()
         {
             this.InitializeComponent();
+            
         }
+
+       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -41,5 +45,21 @@ namespace breakout_game
         {
             Frame.Navigate(typeof(Setting_page));
         }
+        protected override void OnNavigatedTo (NavigationEventArgs e)///לא עובד צריך לTO
+        {
+            settings_class receivedData = e.Parameter as settings_class;
+
+            if (receivedData != null)
+            {
+                messege_box.Text = "work "+receivedData.Ball_type+" "+receivedData.Difficulty;
+
+
+            }
+
+        }
+    
+
+
+
     }
 }

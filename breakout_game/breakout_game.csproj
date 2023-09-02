@@ -129,6 +129,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="settings_class.cs" />
     <Compile Include="Setting_page.xaml.cs">
       <DependentUpon>Setting_page.xaml</DependentUpon>
     </Compile>

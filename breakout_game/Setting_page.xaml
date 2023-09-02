@@ -40,7 +40,6 @@
 
         <Button x:Name="save_settings" Grid.Row="3" Grid.Column="1" FontSize="130" HorizontalAlignment="Center" Click="save_settings_Click" Height="160">Save</Button>
 
-        <Button x:Name="Go_Back" HorizontalAlignment="Left" FontSize="50" Content="Go back" Click="Go_Back_Click"  ></Button>
 
     </Grid>
 </Page>

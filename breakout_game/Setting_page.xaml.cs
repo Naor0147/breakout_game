@@ -32,9 +32,11 @@ namespace breakout_game
     {
         public ball_type Ball_type_settings { get; set; }
         public diffculty_level Diffculty_Level_settings { get; set; }
+        public settings_class _settings { get; set; }  
         public Setting_page()
         {
             this.InitializeComponent();
+            _settings = new settings_class(diffculty_level.easy, ball_type.blue_ball);
         }
 
         private void save_settings_Click(object sender, RoutedEventArgs e)
@@ -64,12 +66,12 @@ namespace breakout_game
             {
                 Diffculty_Level_settings = diffculty_level.easy;
 
+                _settings = new settings_class(Diffculty_Level_settings, Ball_type_settings);
             }
+            Frame.Navigate(typeof(MainPage), _settings);
+
         }
 
-        private void Go_Back_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
+
     }
 }
