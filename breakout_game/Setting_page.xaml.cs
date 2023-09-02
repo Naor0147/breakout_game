@@ -15,6 +15,14 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
+public enum diffculty_level
+{
+    hard,normal,easy
+}
+public enum ball_type
+{
+    blue_ball , red_ball, cool_ball,
+}
 namespace breakout_game
 {
     /// <summary>
@@ -22,9 +30,46 @@ namespace breakout_game
     /// </summary>
     public sealed partial class Setting_page : Page
     {
+        public ball_type Ball_type_settings { get; set; }
+        public diffculty_level Diffculty_Level_settings { get; set; }
         public Setting_page()
         {
             this.InitializeComponent();
+        }
+
+        private void save_settings_Click(object sender, RoutedEventArgs e)
+        {
+            if (blue_ball_RB.IsChecked.Value)
+            {
+                Ball_type_settings = ball_type.blue_ball;
+            }
+            else if (red_ball_RB.IsChecked.Value)
+            {
+                Ball_type_settings = ball_type.red_ball;
+            }
+            else
+            {
+                Ball_type_settings = ball_type.cool_ball;
+            }
+
+            if (Hard_RD.IsChecked.Value)
+            {
+                Diffculty_Level_settings = diffculty_level.hard;
+            }
+            else if (Normal_RD.IsChecked.Value)
+            {
+                Diffculty_Level_settings = diffculty_level.normal;
+            }
+            else
+            {
+                Diffculty_Level_settings = diffculty_level.easy;
+
+            }
+        }
+
+        private void Go_Back_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

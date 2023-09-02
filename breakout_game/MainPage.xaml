@@ -9,9 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="BlueViolet">
-        <Button Content="Login" FontSize="80px" VerticalAlignment="Top" HorizontalAlignment="Center" Height="151" Width="369"  Click="Login_Click"/>
 
-        <Button Content="Settings" FontSize="80px" VerticalAlignment="Center" HorizontalAlignment="Center" Height="151" Width="369"  Click="Button_Click"/>
-        <Button Content="Start" FontSize="80px"  Height="151" Width="369" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
- </Grid>
+        <TextBlock FontSize="80" HorizontalAlignment="Center">BreakOut</TextBlock>
+        
+        <Button Content="Login" FontSize="80px" VerticalAlignment="Bottom" Height="151" Width="369" Click="Button_Click" HorizontalAlignment="Right"  />
+        <Button Content="Settings" FontSize="80px" Height="151" Width="369"  x:Name="Settings_button" Click="Settings_button_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <Button Content="Start" FontSize="80px"  Height="151" Width="369" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="Start_button" Click="Start_button_Click"/>
+    </Grid>
 </Page>

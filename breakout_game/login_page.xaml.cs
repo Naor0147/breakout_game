@@ -13,33 +13,33 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace breakout_game
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class login_page : Page
     {
-        public MainPage()
+        public login_page()
         {
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Go_Back_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(login_page));
+            Frame.Navigate(typeof(MainPage));
         }
 
-        private void Start_button_Click(object sender, RoutedEventArgs e)
+        private void login_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Game_Page));
+
         }
 
-        private void Settings_button_Click(object sender, RoutedEventArgs e)
+        private void create_account_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Setting_page));
+            
         }
     }
 }

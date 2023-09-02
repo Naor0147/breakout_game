@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="breakout_game.login_page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:breakout_game"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="BlueViolet">
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="Go_Back" HorizontalAlignment="Left" FontSize="50" Content="Go back" Click="Go_Back_Click"  ></Button>
+        <TextBlock FontSize="120" FontWeight="Black" Grid.ColumnSpan="2" HorizontalAlignment="Center">Login Page</TextBlock>
+
+        <TextBlock FontSize="90" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Name:</TextBlock>
+        <TextBox FontSize="80" Name="Name_user_box" Grid.Column="1" Grid.Row="1" Margin="20"> </TextBox>
+
+        <TextBlock FontSize="90" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">Password:</TextBlock>
+        <TextBox FontSize="80" Name="Password_user_box" Grid.Column="1" Grid.Row="2" Margin="20"></TextBox>
+
+
+        <Button Grid.Column="1" Grid.Row="3" FontSize="80" HorizontalAlignment="Center" x:Name="login" Click="login_Click"> Log in</Button>
+        <Button Grid.Column="0" Grid.Row="3" FontSize="80" HorizontalAlignment="Center" x:Name="create_account" Click="create_account_Click" >Create account</Button>
+
+    </Grid>
+</Page>
