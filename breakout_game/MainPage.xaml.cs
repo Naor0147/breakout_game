@@ -23,13 +23,13 @@ namespace breakout_game
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public settings_class settings_Data;
+
         public MainPage()
         {
             this.InitializeComponent();
-            
         }
 
-       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -38,28 +38,28 @@ namespace breakout_game
 
         private void Start_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Game_Page));
+            if (settings_Data==null)
+            {
+                settings_Data = new settings_class();
+            }
+            Frame.Navigate(typeof(Game_Page),settings_Data);
         }
 
         private void Settings_button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Setting_page));
         }
-        protected override void OnNavigatedTo (NavigationEventArgs e)///לא עובד צריך לTO
+        protected override void OnNavigatedTo (NavigationEventArgs e)
         {
-            settings_class receivedData = e.Parameter as settings_class;
+            settings_Data = e.Parameter as settings_class;
 
-            if (receivedData != null)
+            if (settings_Data != null)
             {
-                messege_box.Text = "work "+receivedData.Ball_type+" "+receivedData.Difficulty;
-
-
+                messege_box.Text = "work "+settings_Data.Ball_type+" "+settings_Data.Difficulty;
             }
 
         }
-    
 
-
-
+       
     }
 }

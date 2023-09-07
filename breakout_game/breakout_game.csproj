@@ -133,6 +133,8 @@
     <Compile Include="Setting_page.xaml.cs">
       <DependentUpon>Setting_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_ball.cs" />
+    <Compile Include="_block.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

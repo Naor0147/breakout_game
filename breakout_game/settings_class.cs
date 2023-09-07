@@ -16,5 +16,11 @@ namespace breakout_game
             Difficulty = difficulty;
             Ball_type = ball_type;
         }
+
+        public settings_class() 
+        {
+            Difficulty = diffculty_level.easy;
+            Ball_type = ball_type.blue_ball;
+        }
     }
 }

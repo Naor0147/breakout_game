@@ -66,8 +66,9 @@ namespace breakout_game
             {
                 Diffculty_Level_settings = diffculty_level.easy;
 
-                _settings = new settings_class(Diffculty_Level_settings, Ball_type_settings);
             }
+            _settings = new settings_class(Diffculty_Level_settings, Ball_type_settings);
+
             Frame.Navigate(typeof(MainPage), _settings);
 
         }

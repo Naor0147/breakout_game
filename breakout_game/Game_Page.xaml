@@ -8,7 +8,10 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-
-    </Grid>
+    <Canvas x:Name="Canvas_Game"  Background="BlueViolet" >
+        <TextBlock x:Name="_Time" FontSize="60" HorizontalAlignment="Center" Canvas.Left="560" FontWeight="Bold"></TextBlock>
+        
+        
+        
+    </Canvas>
 </Page>
