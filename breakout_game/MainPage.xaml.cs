@@ -33,7 +33,11 @@ namespace breakout_game
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(login_page));
+            if (settings_Data == null)
+            {
+                settings_Data = new settings_class();
+            }
+            Frame.Navigate(typeof(login_page),settings_Data);
         }
 
         private void Start_button_Click(object sender, RoutedEventArgs e)
@@ -47,7 +51,7 @@ namespace breakout_game
 
         private void Settings_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Setting_page));
+            Frame.Navigate(typeof(Setting_page),settings_Data);
         }
         protected override void OnNavigatedTo (NavigationEventArgs e)
         {
@@ -55,10 +59,15 @@ namespace breakout_game
 
             if (settings_Data != null)
             {
-                messege_box.Text = "work "+settings_Data.Ball_type+" "+settings_Data.Difficulty;
+                messege_box.Text = "work "+settings_Data.Ball_type+" "+settings_Data.Difficulty + " name: " + settings_Data.Name;
+            }
+            else
+            {
+                settings_Data = new settings_class();
             }
 
         }
+
 
        
     }

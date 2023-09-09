@@ -25,14 +25,15 @@
 
         <TextBlock FontSize="120" Grid.ColumnSpan="3" FontWeight="ExtraBold" HorizontalAlignment="Center">Settings Page</TextBlock>
         <RadioButton Name="blue_ball_RB" GroupName="ball_skin" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" IsChecked="True"/>
-        <RadioButton Name="cool_ball_RB" GroupName="ball_skin" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <RadioButton Name="green_ball_RB" GroupName="ball_skin" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <RadioButton Name="red_ball_RB" GroupName="ball_skin" Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
 
 
         <Image Source="/pics/blue_ball.png" Width="160" Grid.Row="1" Margin="183,0,84,0"/>
-        <Image Source="/pics/cool_ball.png" Width="180" Grid.Column="1" Margin="183,0,84,0" Grid.Row="1"/>
+        <Image Source="/pics/green_ball.png" Width="180" Grid.Column="1" Margin="183,0,84,0" Grid.Row="1"/>
         <Image Source="/pics/red_ball.png" Grid.Column="2" Margin="212,0,67,0" Grid.Row="1" />
+
 
         <RadioButton x:Name="Hard_RD" Content="Hard" FontSize="100" GroupName="Level_dif" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="True"/>
         <RadioButton x:Name="Normal_RD" Content="Normal" FontSize="100" GroupName="Level_dif" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" />

@@ -10,11 +10,13 @@ namespace breakout_game
     {
         public diffculty_level Difficulty { get; set; }
         public ball_type Ball_type { get; set; }
+        public string Name { get; set; }
 
-        public settings_class(diffculty_level difficulty, ball_type ball_type)
+        public settings_class(diffculty_level difficulty, ball_type ball_type,string _name = null)
         {
             Difficulty = difficulty;
             Ball_type = ball_type;
+            Name = _name;
         }
 
         public settings_class() 

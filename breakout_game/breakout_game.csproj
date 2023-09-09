@@ -119,6 +119,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\users_service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Game_Page.xaml.cs">
       <DependentUpon>Game_Page.xaml</DependentUpon>
     </Compile>
@@ -142,8 +147,19 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\users_service\breakout_game.users_service.Users.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\users_service\item.disco" />
+    <None Include="Connected Services\users_service\configuration91.svcinfo" />
+    <None Include="Connected Services\users_service\configuration.svcinfo" />
+    <None Include="Connected Services\users_service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="pics\cool_ball.png" />
     <Content Include="pics\blue_ball.png" />
+    <Content Include="pics\green_ball.png" />
     <Content Include="pics\red_ball.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -153,6 +169,9 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <None Include="Connected Services\users_service\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -187,7 +206,22 @@
       <Version>3.1.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\users_service\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\users_service\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\users_service\Service1.wsdl" />
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\users_service\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

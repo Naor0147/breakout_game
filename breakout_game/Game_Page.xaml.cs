@@ -38,34 +38,40 @@ namespace breakout_game
 
         public _ball _Ball_obj;
 
+        public settings_class settings_Data;
 
         int ms =0 ,sec = 0, min = 0;
-
+        public bool ve =true;
         public Game_Page()
         {
             this.InitializeComponent();
-            
+
 
             //build the Rectangle
             myRectangle = new Rectangle
             {
                 Width = 100,
-                Height = 50,
-                
-                Fill= new SolidColorBrush(Colors.Blue)
+                Height = 20,
+                Tag = "Player",
+                Fill= new SolidColorBrush(Colors.Purple)
             };
             Canvas_Game.Children.Add(myRectangle);
             Canvas.SetLeft(myRectangle, x);
             Canvas.SetTop(myRectangle, 600);
 
             _block_list = new List<_block>();
+
+            Color[] colorarr = { Colors.White, Colors.Blue, Colors.Red, Colors.Purple };
             for (int i = 0; i < 4; i++)
             {
-               _block_list.Add( new _block(70, 30, Colors.White, 2, Canvas_Game, i*200, 200, 5));
+                for (int j = 1; j < 2; j++)
+                {
+                    _block_list.Add(new _block(70, 30, colorarr[i], 2, Canvas_Game,100+ j * 200,( i*35 +200), 5));
+
+                }
 
             }
 
-             _Ball_obj = new _ball(ball_type.blue_ball,100,100,5,50,Canvas_Game);
 
 
 
@@ -88,7 +94,7 @@ namespace breakout_game
             if (args.VirtualKey == VirtualKey.D)
             {
 
-                x += 10;
+                x += 25;
                 if (Canvas_Game.ActualWidth < x)
                 {
                     x = -50;
@@ -96,7 +102,7 @@ namespace breakout_game
             }
             else if (args.VirtualKey == VirtualKey.A)
             {
-                x -= 10;
+                x -= 25;
                 if (x < -100)
                 {
                     x = Canvas_Game.ActualWidth - 100;
@@ -116,6 +122,18 @@ namespace breakout_game
             }
         }
 
+        public void check_if_win()
+        {
+            var rectangles = Canvas_Game.Children.OfType<Rectangle>().ToList();
+            int countOfBlocks = rectangles.Count(rectangle => rectangle.Tag?.ToString() == "block");
+            if (countOfBlocks==0 )
+            {
+                Debug.WriteLine("Win");
+                timer.Stop();
+                Frame.Navigate(typeof(MainPage));
+            }
+
+        }
 
 
         private void Timer_Tick(object sender, object e)
@@ -132,7 +150,7 @@ namespace breakout_game
 
             //timer 
             _Time.Text = _Calc_time(5);
-
+            check_if_win();        
         }
 
         //Update the time 
@@ -158,11 +176,13 @@ namespace breakout_game
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            settings_class settings_Data = e.Parameter as settings_class;
+            settings_Data = e.Parameter as settings_class;
 
             if (settings_Data != null)
             {
                 Debug.WriteLine( "work " + settings_Data.Ball_type + " " + settings_Data.Difficulty);
+                _Ball_obj = new _ball(settings_Data.Ball_type, 600, 400, 10, 50, Canvas_Game);
+
             }
 
         }

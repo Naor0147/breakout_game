@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -21,7 +22,7 @@ public enum diffculty_level
 }
 public enum ball_type
 {
-    blue_ball , red_ball, cool_ball,
+    blue_ball , red_ball, green_ball,
 }
 namespace breakout_game
 {
@@ -32,11 +33,11 @@ namespace breakout_game
     {
         public ball_type Ball_type_settings { get; set; }
         public diffculty_level Diffculty_Level_settings { get; set; }
-        public settings_class _settings { get; set; }  
+        public settings_class settings_Data { get; set; }  
         public Setting_page()
         {
             this.InitializeComponent();
-            _settings = new settings_class(diffculty_level.easy, ball_type.blue_ball);
+          
         }
 
         private void save_settings_Click(object sender, RoutedEventArgs e)
@@ -51,7 +52,7 @@ namespace breakout_game
             }
             else
             {
-                Ball_type_settings = ball_type.cool_ball;
+                Ball_type_settings = ball_type.green_ball;
             }
 
             if (Hard_RD.IsChecked.Value)
@@ -67,9 +68,20 @@ namespace breakout_game
                 Diffculty_Level_settings = diffculty_level.easy;
 
             }
-            _settings = new settings_class(Diffculty_Level_settings, Ball_type_settings);
+            settings_Data.Difficulty = Diffculty_Level_settings;
+            settings_Data.Ball_type = Ball_type_settings;
 
-            Frame.Navigate(typeof(MainPage), _settings);
+            Frame.Navigate(typeof(MainPage), settings_Data);
+
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            settings_Data = e.Parameter as settings_class;
+
+            if (settings_Data != null)
+            {
+                Debug.WriteLine("work " + settings_Data.Ball_type + " " + settings_Data.Difficulty + " name: " + settings_Data.Name);
+            }
 
         }
 

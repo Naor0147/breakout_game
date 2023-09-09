@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="8e822ff3-aa24-49df-b7a2-ec6afad8e74c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/breakout_wcf/Service1/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="bafd6186-808a-4c69-9e33-29a173e69d3b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/breakout_wcf/Service1/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="33f04892-15cc-4559-9d41-eb48c078934e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/breakout_wcf/Service1/?xsd=xsd1" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="1d191aac-7da3-4f0f-b430-d82801c14c00" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/breakout_wcf/Service1/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="debaf484-be10-4f3e-b3c4-c7d28d4e9cde" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/breakout_wcf/Service1/?disco" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="96ff1f6f-52cf-4bdd-89d4-55cd54182bfe" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/breakout_wcf/Service1/?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

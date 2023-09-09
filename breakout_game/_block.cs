@@ -34,7 +34,7 @@ namespace breakout_game
         //Canvas in use 
         private Canvas _canvas;
 
-        private Rectangle _myRectangle;
+        public Rectangle _myRectangle { get; set; }
 
 
         public _block(double width, double height, Windows.UI.Color color, int hP, Canvas canvas , double x,double y,double dx)
@@ -60,7 +60,7 @@ namespace breakout_game
             Canvas.SetLeft(_myRectangle, _x);
             Canvas.SetTop(_myRectangle, _y);
 
-
+            _myRectangle.Tag = "block";
 
             _canvas.Children.Add(_myRectangle);
 
@@ -83,5 +83,8 @@ namespace breakout_game
             return _hit;
 
         }
+
+        
+        
     }
 }

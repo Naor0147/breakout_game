@@ -14,6 +14,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -22,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <Button x:Name="Go_Back" HorizontalAlignment="Left" FontSize="50" Content="Go back" Click="Go_Back_Click"  ></Button>
-        <TextBlock FontSize="120" FontWeight="Black" Grid.ColumnSpan="2" HorizontalAlignment="Center">Login Page</TextBlock>
+        <TextBlock FontSize="80" FontWeight="Black" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">Login\Create Page</TextBlock>
 
         <TextBlock FontSize="90" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Name:</TextBlock>
         <TextBox FontSize="80" Name="Name_user_box" Grid.Column="1" Grid.Row="1" Margin="20"> </TextBox>
@@ -30,9 +31,10 @@
         <TextBlock FontSize="90" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">Password:</TextBlock>
         <TextBox FontSize="80" Name="Password_user_box" Grid.Column="1" Grid.Row="2" Margin="20"></TextBox>
 
+        <TextBlock x:Name="messsege_text" Grid.Row="3" FontWeight="SemiBold" FontSize="40" Foreground="Red" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">help</TextBlock>
 
-        <Button Grid.Column="1" Grid.Row="3" FontSize="80" HorizontalAlignment="Center" x:Name="login" Click="login_Click"> Log in</Button>
-        <Button Grid.Column="0" Grid.Row="3" FontSize="80" HorizontalAlignment="Center" x:Name="create_account" Click="create_account_Click" >Create account</Button>
+        <Button Grid.Column="1" Grid.Row="4" FontSize="80" HorizontalAlignment="Center" x:Name="login" Click="login_Click"> Log in</Button>
+        <Button Grid.Column="0" Grid.Row="4" FontSize="80" HorizontalAlignment="Center" x:Name="create_account" Click="create_account_Click" >Create account</Button>
 
     </Grid>
 </Page>
