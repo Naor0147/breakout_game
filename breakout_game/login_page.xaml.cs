@@ -23,7 +23,6 @@ namespace breakout_game
     /// </summary>
     public sealed partial class login_page : Page
     {
-        breakout_game.users_service.Service1Client proxy;
         public settings_class settings_Data;
         public login_page()
         {

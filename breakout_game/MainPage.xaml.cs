@@ -68,7 +68,10 @@ namespace breakout_game
 
         }
 
+        private void Stats_button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(stats_page), settings_Data);
 
-       
+        }
     }
 }

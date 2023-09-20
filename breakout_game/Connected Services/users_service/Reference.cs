@@ -60,6 +60,81 @@ namespace breakout_game.users_service {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Stats_Class", Namespace="http://schemas.datacontract.org/2004/07/breakout_wcf")]
+    public partial class Stats_Class : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string difficultyField;
+        
+        private int scoreField;
+        
+        private float timeField;
+        
+        private string usernameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string difficulty {
+            get {
+                return this.difficultyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.difficultyField, value) != true)) {
+                    this.difficultyField = value;
+                    this.RaisePropertyChanged("difficulty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int score {
+            get {
+                return this.scoreField;
+            }
+            set {
+                if ((this.scoreField.Equals(value) != true)) {
+                    this.scoreField = value;
+                    this.RaisePropertyChanged("score");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float time {
+            get {
+                return this.timeField;
+            }
+            set {
+                if ((this.timeField.Equals(value) != true)) {
+                    this.timeField = value;
+                    this.RaisePropertyChanged("time");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.usernameField, value) != true)) {
+                    this.usernameField = value;
+                    this.RaisePropertyChanged("username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="users_service.IService1")]
     public interface IService1 {
@@ -78,6 +153,12 @@ namespace breakout_game.users_service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
         System.Threading.Tasks.Task<bool> LoginAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddStast", ReplyAction="http://tempuri.org/IService1/AddStastResponse")]
+        System.Threading.Tasks.Task<bool> AddStastAsync(breakout_game.users_service.Stats_Class stats);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ShowListStast", ReplyAction="http://tempuri.org/IService1/ShowListStastResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<breakout_game.users_service.Stats_Class>> ShowListStastAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -141,6 +222,14 @@ namespace breakout_game.users_service {
         
         public System.Threading.Tasks.Task<bool> LoginAsync(string username, string password) {
             return base.Channel.LoginAsync(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddStastAsync(breakout_game.users_service.Stats_Class stats) {
+            return base.Channel.AddStastAsync(stats);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<breakout_game.users_service.Stats_Class>> ShowListStastAsync() {
+            return base.Channel.ShowListStastAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {

@@ -23,6 +23,7 @@ namespace breakout_game
         {
             Difficulty = diffculty_level.easy;
             Ball_type = ball_type.blue_ball;
+            Name = "Guess";
         }
     }
 }

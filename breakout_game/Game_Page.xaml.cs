@@ -20,6 +20,7 @@ using System.Net.Sockets;
 using Windows.System;
 using System.Diagnostics;
 using Windows.ApplicationModel.VoiceCommands;
+using breakout_game.users_service;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -41,7 +42,7 @@ namespace breakout_game
         public settings_class settings_Data;
 
         int ms =0 ,sec = 0, min = 0;
-        public bool ve =true;
+        double time = 0;
         public Game_Page()
         {
             this.InitializeComponent();
@@ -130,6 +131,14 @@ namespace breakout_game
             {
                 Debug.WriteLine("Win");
                 timer.Stop();
+
+                breakout_game.users_service.Service1Client proxy = new breakout_game.users_service.Service1Client();
+                Stats_Class stats = new Stats_Class();
+                stats.username = settings_Data.Name;
+                stats.difficulty = settings_Data.Difficulty.ToString();
+               // proxy.AddStastAsync(());
+
+
                 Frame.Navigate(typeof(MainPage));
             }
 
@@ -156,6 +165,7 @@ namespace breakout_game
         //Update the time 
         public string _Calc_time(int add_ms)
         {
+            time += 0.05;
             ms += add_ms;
             if (ms >= 100)
             {

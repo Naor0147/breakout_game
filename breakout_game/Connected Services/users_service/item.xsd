@@ -13,4 +13,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Users" nillable="true" type="tns:Users" />
+  <xs:complexType name="Stats_Class">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="difficulty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="score" type="xs:int" />
+      <xs:element minOccurs="0" name="time" type="xs:float" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Stats_Class" nillable="true" type="tns:Stats_Class" />
+  <xs:complexType name="ArrayOfStats_Class">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Stats_Class" nillable="true" type="tns:Stats_Class" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStats_Class" nillable="true" type="tns:ArrayOfStats_Class" />
 </xs:schema>

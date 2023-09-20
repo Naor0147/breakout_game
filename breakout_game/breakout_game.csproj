@@ -138,6 +138,9 @@
     <Compile Include="Setting_page.xaml.cs">
       <DependentUpon>Setting_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="stats_page.xaml.cs">
+      <DependentUpon>stats_page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_ball.cs" />
     <Compile Include="_block.cs" />
   </ItemGroup>
@@ -147,6 +150,9 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\users_service\breakout_game.users_service.Stats_Class.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\users_service\breakout_game.users_service.Users.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -191,6 +197,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Setting_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="stats_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

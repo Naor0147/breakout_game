@@ -71,4 +71,30 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddStast">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/breakout_wcf" minOccurs="0" name="stats" nillable="true" type="q3:Stats_Class" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddStastResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddStastResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowListStast">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowListStastResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/breakout_wcf" minOccurs="0" name="ShowListStastResult" nillable="true" type="q4:ArrayOfStats_Class" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

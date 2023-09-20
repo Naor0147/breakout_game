@@ -37,6 +37,18 @@
   <wsdl:message name="IService1_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AddStast_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStast" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddStast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStastResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ShowListStast_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowListStast" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ShowListStast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowListStastResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="AddUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddUser" message="tns:IService1_AddUser_InputMessage" />
@@ -57,6 +69,14 @@
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Login" message="tns:IService1_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginResponse" message="tns:IService1_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddStast" message="tns:IService1_AddStast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddStastResponse" message="tns:IService1_AddStast_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowListStast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ShowListStast" message="tns:IService1_ShowListStast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ShowListStastResponse" message="tns:IService1_ShowListStast_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -99,6 +119,24 @@
     </wsdl:operation>
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/IService1/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStast">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddStast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowListStast">
+      <soap:operation soapAction="http://tempuri.org/IService1/ShowListStast" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
