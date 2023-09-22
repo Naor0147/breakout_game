@@ -49,6 +49,48 @@
   <wsdl:message name="IService1_ShowListStast_OutputMessage">
     <wsdl:part name="parameters" element="tns:ShowListStastResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ShowUserStast_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowUserStast" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ShowUserStast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowUserStastResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getinnerJoin_InputMessage">
+    <wsdl:part name="parameters" element="tns:getinnerJoin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getinnerJoin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getinnerJoinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_showMaxstast_InputMessage">
+    <wsdl:part name="parameters" element="tns:showMaxstast" />
+  </wsdl:message>
+  <wsdl:message name="IService1_showMaxstast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:showMaxstastResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sortByStats_InputMessage">
+    <wsdl:part name="parameters" element="tns:sortByStats" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sortByStats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sortByStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_countUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:countUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_countUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:countUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AvgScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:AvgScore" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AvgScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AvgScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TotalScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:TotalScore" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TotalScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TotalScoreResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="AddUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddUser" message="tns:IService1_AddUser_InputMessage" />
@@ -77,6 +119,34 @@
     <wsdl:operation name="ShowListStast">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ShowListStast" message="tns:IService1_ShowListStast_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ShowListStastResponse" message="tns:IService1_ShowListStast_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowUserStast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ShowUserStast" message="tns:IService1_ShowUserStast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ShowUserStastResponse" message="tns:IService1_ShowUserStast_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getinnerJoin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getinnerJoin" message="tns:IService1_getinnerJoin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getinnerJoinResponse" message="tns:IService1_getinnerJoin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="showMaxstast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/showMaxstast" message="tns:IService1_showMaxstast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/showMaxstastResponse" message="tns:IService1_showMaxstast_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sortByStats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sortByStats" message="tns:IService1_sortByStats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sortByStatsResponse" message="tns:IService1_sortByStats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="countUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/countUsers" message="tns:IService1_countUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/countUsersResponse" message="tns:IService1_countUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AvgScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AvgScore" message="tns:IService1_AvgScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AvgScoreResponse" message="tns:IService1_AvgScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TotalScore" message="tns:IService1_TotalScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TotalScoreResponse" message="tns:IService1_TotalScore_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -137,6 +207,69 @@
     </wsdl:operation>
     <wsdl:operation name="ShowListStast">
       <soap:operation soapAction="http://tempuri.org/IService1/ShowListStast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowUserStast">
+      <soap:operation soapAction="http://tempuri.org/IService1/ShowUserStast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getinnerJoin">
+      <soap:operation soapAction="http://tempuri.org/IService1/getinnerJoin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showMaxstast">
+      <soap:operation soapAction="http://tempuri.org/IService1/showMaxstast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sortByStats">
+      <soap:operation soapAction="http://tempuri.org/IService1/sortByStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/countUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AvgScore">
+      <soap:operation soapAction="http://tempuri.org/IService1/AvgScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalScore">
+      <soap:operation soapAction="http://tempuri.org/IService1/TotalScore" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

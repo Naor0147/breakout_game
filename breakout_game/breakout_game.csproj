@@ -150,6 +150,9 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\users_service\breakout_game.users_service.innerJoin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\users_service\breakout_game.users_service.Stats_Class.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -97,4 +97,90 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ShowUserStast">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowUserStastResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/breakout_wcf" minOccurs="0" name="ShowUserStastResult" nillable="true" type="q5:ArrayOfStats_Class" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getinnerJoin">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getinnerJoinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/breakout_wcf" minOccurs="0" name="getinnerJoinResult" nillable="true" type="q6:ArrayOfinnerJoin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="showMaxstast">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="showMaxstastResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/breakout_wcf" minOccurs="0" name="showMaxstastResult" nillable="true" type="q7:ArrayOfStats_Class" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sortByStats">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sortByStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/breakout_wcf" minOccurs="0" name="sortByStatsResult" nillable="true" type="q8:ArrayOfinnerJoin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="countUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="countUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countUsersResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AvgScore">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AvgScoreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AvgScoreResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TotalScore">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TotalScoreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TotalScoreResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -28,4 +28,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfStats_Class" nillable="true" type="tns:ArrayOfStats_Class" />
+  <xs:complexType name="ArrayOfinnerJoin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="innerJoin" nillable="true" type="tns:innerJoin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfinnerJoin" nillable="true" type="tns:ArrayOfinnerJoin" />
+  <xs:complexType name="innerJoin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stats" nillable="true" type="tns:Stats_Class" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="innerJoin" nillable="true" type="tns:innerJoin" />
 </xs:schema>

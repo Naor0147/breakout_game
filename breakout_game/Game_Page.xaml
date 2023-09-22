@@ -10,8 +10,8 @@
 
     <Canvas x:Name="Canvas_Game"  Background="BlueViolet" >
         <TextBlock x:Name="_Time" FontSize="60" HorizontalAlignment="Center" Canvas.Left="560" FontWeight="Bold"></TextBlock>
-        <Rectangle Canvas.Top="80" Width="1800" Height="20" Fill="Wheat" Tag="Platfrom" ></Rectangle>
-        <Rectangle Canvas.Top="720" Width="1800" Height="20" Fill="Wheat" Tag="Platfrom" ></Rectangle>
+        <Rectangle Canvas.Top="80" Width="2000" Height="20" Fill="Wheat" Tag="Platfrom" ></Rectangle>
+        <Rectangle Canvas.Top="720" Width="2000" Height="20" Fill="Wheat" Tag="Platfrom" ></Rectangle>
         
         
     </Canvas>

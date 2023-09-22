@@ -62,16 +62,8 @@ namespace breakout_game
 
             _block_list = new List<_block>();
 
-            Color[] colorarr = { Colors.White, Colors.Blue, Colors.Red, Colors.Purple };
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 1; j < 2; j++)
-                {
-                    _block_list.Add(new _block(70, 30, colorarr[i], 2, Canvas_Game,100+ j * 200,( i*35 +200), 5));
 
-                }
-
-            }
+           
 
 
 
@@ -136,7 +128,9 @@ namespace breakout_game
                 Stats_Class stats = new Stats_Class();
                 stats.username = settings_Data.Name;
                 stats.difficulty = settings_Data.Difficulty.ToString();
-               // proxy.AddStastAsync(());
+                stats.time = (float)time;
+                stats.score=(int)(((int)settings_Data.Difficulty*400) / (float)time);
+                proxy.AddStastAsync(stats);
 
 
                 Frame.Navigate(typeof(MainPage));
@@ -192,10 +186,21 @@ namespace breakout_game
             {
                 Debug.WriteLine( "work " + settings_Data.Ball_type + " " + settings_Data.Difficulty);
                 _Ball_obj = new _ball(settings_Data.Ball_type, 600, 400, 10, 50, Canvas_Game);
+                Color[] colorarr = { Colors.White, Colors.Blue, Colors.Red, Colors.Purple };
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 1; j < ((int)settings_Data.Difficulty); j++)
+                    {
+                        _block_list.Add(new _block(70, 30, colorarr[i], 2, Canvas_Game, 50 + j * 110, (i * 35 + 200), 5));
+
+                    }
+
+                }
 
             }
 
         }
+
 
     }
 }

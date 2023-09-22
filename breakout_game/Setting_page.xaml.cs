@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 public enum diffculty_level
 {
-    hard,normal,easy
+    hard=12,normal=8,easy=4
 }
 public enum ball_type
 {

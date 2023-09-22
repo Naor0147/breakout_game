@@ -10,9 +10,24 @@
 
     <Canvas Background="HotPink" Margin="0,6,0,-6">
 
-        <ListView Margin="10" Name="lvDataBinding">
-            
-        </ListView>
+        <ListView Margin="10" FontSize="60" BorderBrush="Red" Name="lvDataBinding">
 
+        </ListView>
+        <Button x:Name="Go_Back" FontSize="50" Content="Go back" Click="Go_Back_Click" Canvas.Left="1600" Canvas.Top="10" VerticalAlignment="Top"  />
+
+        <ComboBox Width="600" Height="150" FontSize="60" Name="comboBox" SelectedIndex="0" SelectionChanged="comboBox_SelectionChanged" Canvas.Left="1320" Canvas.Top="252">
+            <ComboBoxItem Content="show all stats" x:Uid="0"  />
+            <ComboBoxItem Content="show only my stats"  />
+            <ComboBoxItem Content="inner join all stats" />
+            <ComboBoxItem Content="show Max Stats" />
+            <ComboBoxItem Content="count Users" />
+            <ComboBoxItem Content="Avg Score" />
+            <ComboBoxItem Content="Sum score" />
+
+
+        </ComboBox>
+
+
+       
     </Canvas>
 </Page>
